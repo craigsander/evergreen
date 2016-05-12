@@ -11,7 +11,7 @@ from django.contrib.postgres.fields import JSONField
 from django.core.exceptions import ValidationError
 
 # Add-ons and Custom Libs
-from utils import contact_information as ci
+from evergreen.utils import contact_information as ci
 
 
 def validate_only_one_instance(obj):
