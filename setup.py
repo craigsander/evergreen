@@ -8,5 +8,5 @@ setup(name='Evergreen',
       author='Craig Sander',
       author_email='csander@centriole-solutions.com',
       url='',
-      packages=['evergreen'],
+      packages=['website', 'utils'],
      )
