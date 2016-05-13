@@ -9,29 +9,31 @@ from django.conf import settings
 from django.db import models
 from django.contrib.postgres.fields import JSONField
 
-newfields={'fields': {
-	{'field1': {
-		'required':True,
-		'type': 'textarea',
-		'html':True,
-		'label':'',
-		'help_text':'',		
-		'classes':[],
-		'content':'',
+newfields=
+{	'fields': {
+		{'field1': {
+			'required':True,
+			'type': 'textarea',
+			'html':True,
+			'label':'',
+			'help_text':'',		
+			'classes':[],
+			'content':'',
+			},
 		},
-	},
-	{'field2': {
-		'required':False,
-		'type': 'select/multi',
-		'options': {
-			'value1':'option1',
-			'value2':'option2',
-			'value3':'option3',
+		{'field2': {
+			'required':False,
+			'type': 'select/multi',
+			'options': {
+				'value1':'option1',
+				'value2':'option2',
+				'value3':'option3',
+			},
+			'classes':[],
+			'label':'',
+			'help_text': '',
+			},	
 		},
-		'classes':[],
-		'label':'',
-		'help_text': '',
-		},	
 	},
 }
 
