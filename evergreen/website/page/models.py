@@ -28,7 +28,7 @@ newfields={'fields': {
 			'value2':'option2',
 			'value3':'option3',
 		},
-		'classes' = [],
+		'classes':[],
 		'label':'',
 		'help_text': '',
 		},	
