@@ -1,0 +1,15 @@
+{% extends 'base-theme/base-theme.html' %}
+{% block title %}{{ page.title }}{% endblock %}
+{% block seo_description %}Description here.{% endblock %}
+
+{% block main_content %}
+	
+	{% with template_name=page.pageType.template %}
+		{% if page.pageType.template %}
+			{% include ''|add:template_name %}
+		{% else %}
+			{% include 'default.html' %}
+		{% endif %}
+	{% endwith %}
+		
+{% endblock %}

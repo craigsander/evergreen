@@ -1,0 +1,17 @@
+<div class="row">
+	<div class="large-12 columns">
+		<h1>{{ article.title }}</h1>
+		<p><small>Created: {{ article.created|date:"M d, Y"}} | Author: {{ article.author }}</p>
+	</div>
+</div>
+
+<div class="row">
+	<div class="large-9 columns">
+		{% autoescape on %}
+			{{ article.body|safe }}
+		{% endautoescape %}
+	</div>
+	<div class="large-3 columns">
+		{% include 'blog/sidebar.html' %}
+	</div>
+</div>

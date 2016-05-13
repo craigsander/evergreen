@@ -1,0 +1,37 @@
+<div class="sticky">
+
+	<nav class="top-bar" data-topbar role="navigation">
+	  <ul class="title-area">
+	    <li class="name">
+		 <h1><a href="/"><img src="/static/otto/base-theme/img/logo.png" class="logo-large"></a></h1>
+	    </li>
+		<!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+	    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+	  </ul>
+
+	  <section class="top-bar-section">
+	    <!-- Right Nav Section -->
+	    <ul class="right">
+		 <li class=""><a href="#">Sign In</a></li>
+	    </ul>
+
+	    <!-- Left Nav Section -->
+	    <ul class="left">
+		{% for mi in menuItems %}
+			{% if mi.has_children %}
+				<li class="has-dropdown"><a href="#">{{ mi.title }}</a>
+					<ul class="dropdown">
+					{% for child in mi.children %}
+						<li><a href="/{{child.path}}/">{{ child.title }}</a></li>
+					{% endfor %}
+					</ul>
+			{% elif mi.is_child %}
+			
+			{% else %}
+				<li><a href="/{{mi.path}}/">{{ mi.title}}</a></li>
+			{% endif %}	
+		{% endfor %}
+	    </ul>
+	  </section>
+	</nav>
+</div>

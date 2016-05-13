@@ -1,0 +1,52 @@
+{% extends 'base-theme/base-theme.html' %}
+{% block title %}{{ config.blogTitle }}{% endblock %}
+{% block seo_description %}Description here.{% endblock %}
+
+{% block main_content %}
+	
+	<div class="row">
+		<div class="large-12 columns">
+			<h1>Centriole Solutions Knowledge Base</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="large-9 columns">
+		
+		{% for a in articles %}
+			<h4 class="subheader"><a href="{{ a.get_absolute_url }}">{{ a.title }}</a></h4>
+			<p><small>Created: {{ a.created|date:"M d, Y"}} | Author: {{ a.author }}</p>
+			<p>{{ a.body|safe|slice:"600" }}... <a href="{{ a.get_absolute_url }}">Read more</a>.</p>
+			<hr>
+		{% endfor %}
+
+
+		<div class="pagination-centered">
+		  <ul class="pagination">
+			{% if articles.has_previous %}
+				<li class="arrow"><a href="?page={{ articles.previous_page_number }}">&laquo;</a></li>
+			{% else %}
+				<li class="arrow unavailable"><a href="#">&laquo;</a></li>
+			{% endif %}
+
+			<li class="current"><a href="">{{ articles.number }}</a></li>
+			
+			{% with total=articles.paginator.num_pages %}
+				{% if total < articles.paginator.num_pages %}
+					<li><a href="?page={{ count }}">{{ count }}</a></li>
+				{% endif %}
+			{% endwith %}
+
+			{% if articles.has_next %}
+				<li class="arrow"><a href="?page={{ articles.next_page_number }}">&raquo;</a></li>
+			{% endif %}
+		  </ul>
+		</div>
+
+	
+		</div>
+		<div class="large-3 columns">
+			{% include 'blog/sidebar.html' %}
+		</div>
+	</div>
+		
+{% endblock %}

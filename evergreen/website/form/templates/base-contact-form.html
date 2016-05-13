@@ -1,0 +1,39 @@
+<h5 class="subheader text-center">Get More Information</h5><hr>
+<form action="/contact/" method="post">
+	{% csrf_token %}
+	<div class="row">
+		<div class="large-6 columns">
+			
+				<input type="text" name="fName" placeholder="First Name">
+			
+		</div>
+		<div class="large-6 columns">
+			
+				<input type="text" name="lName" placeholder="Last Name">
+								
+		</div>
+		<div class="large-12 columns">
+			
+				<input type="text" name="companyName" placeholder="Company Name">
+						
+		</div>
+		<div class="large-12 columns">
+			
+				<input type="text" name="email" placeholder="Email Address">
+								
+		</div>
+		<div class="large-12 columns">
+			
+				<input type="text" name="telephone" placeholder="Telephone">
+							
+		</div>
+		<div class="large-12 columns">
+			
+				<textarea name="comments" style="height: 100px;" placeholder="What information can we provide to help you grow your company?"></textarea>
+							
+		</div>
+		<div class="large-12 columns">
+			<input style="margin-top: 15px;" type="submit" name="submit" value="Contact Us" class="button tiny expand">
+		</div>
+	</div>
+</form>
