@@ -9,6 +9,7 @@ from django.conf import settings
 from django.db import models
 from django.contrib.postgres.fields import JSONField
 
+'''
 newfields= {	
 	'fields': {
 		{'field1': {
@@ -36,6 +37,8 @@ newfields= {
 		},
 	},
 }
+'''
+
 
 class PageType(models.Model):
 	
