@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 from distutils.core import setup
+from setuptools import setup, find_packages
 
 setup(name='Evergreen',
       version='1.0',
@@ -8,5 +9,5 @@ setup(name='Evergreen',
       author='Craig Sander',
       author_email='csander@centriole-solutions.com',
       url='',
-      packages=['website', 'utils'],
+      packages=find_packages(),
      )
