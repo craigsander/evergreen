@@ -112,33 +112,30 @@ DateTimeField = {
 	"classes": [],
 	"id":"",
 }
-	'''
-
-	NEED TO USE THE DATETIMEPICKER SETTINGS
-
-	datepickerMode: "day",
-	-datePicker: {
-	showWeeks: true,
-	startingDay: 0,
-	initDate: "",
-	minMode: "day",
-	maxMode: "year",
-	yearRange: "20",
-	datepickerMode: "day"
-	},
-	-timePicker: {
-	hourStep: 1,
-	minuteStep: 1,
-	showMeridian: true,
-	readonlyInput: false,
-	mousewheel: true,
-	arrowkeys: true
-	},
-	'''			
-
-
 
 """
+
+NEED TO USE THE DATETIMEPICKER SETTINGS
+
+datepickerMode: "day",
+-datePicker: {
+showWeeks: true,
+startingDay: 0,
+initDate: "",
+minMode: "day",
+maxMode: "year",
+yearRange: "20",
+datepickerMode: "day"
+},
+-timePicker: {
+hourStep: 1,
+minuteStep: 1,
+showMeridian: true,
+readonlyInput: false,
+mousewheel: true,
+arrowkeys: true
+},
+		
 
 - {
 input: true,
