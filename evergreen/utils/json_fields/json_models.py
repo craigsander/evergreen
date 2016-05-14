@@ -8,6 +8,21 @@ At first we simply need to create a basic model with some basic attributes that 
 We will later need to add some verification methods, again, similar to what Django does in Python.
 
 
+Thinking out loud. 
+
+Okay, so we need to allow custom fields to each of the models with jsonfields. 
+
+In the 'type' model, we declare what types of data we want to make available. 
+
+In the object itself, we want to fill out the data for those fields. 
+
+So, in the type we declare the basic settings of the form. 
+
+In the object, we collect the data for that form. 
+
+So, we need some choices 
+
+
 http://codepen.io/travist/full/xVyMjo/
 
 Checkout form.io. It's exactly what you're discussing. It's the same thing. 
@@ -16,179 +31,116 @@ Things I really like:
 - Multiple - like SheepIt (http://stackoverflow.com/questions/34532871/add-multiple-fields-to-form)
 - Plugins to handle drag-and-drop files, etc.
 
+{"test": "true", "list": ["test1", "test2", "test3"]}
 
--components: [
-- {
-input: true,
-tableView: true,
-inputType: "text",
-inputMask: "",
-label: "",
-key: "textField",
-placeholder: "",
-prefix: "",
-suffix: "",
-multiple: false,
-defaultValue: "",
-protected: false,
-unique: false,
-persistent: true,
--validate: {
-required: false,
-minLength: "",
-maxLength: "",
-pattern: "",
-custom: "",
-customPrivate: false
-},
--conditional: {
-show: false,
-when: null,
-eq: ""
-},
-type: "textfield",
-$$hashKey: "object:1763"
-},
-- {
-input: true,
-tableView: true,
-inputType: "text",
-inputMask: "(617) 688-0988 (formatting)",
-label: "Test",
-key: "test",
-placeholder: "Test",
-prefix: "$",
-suffix: "#",
-multiple: true,
-defaultValue: "Test",
-protected: false,
-unique: false,
-persistent: true,
--validate: {
-required: false,
-minLength: "",
-maxLength: "",
-pattern: "",
-custom: "",
-customPrivate: false
-},
--conditional: {
-show: false,
-when: null,
-eq: ""
-},
-type: "textfield",
-$$hashKey: "object:1249",
-customClass: "large-12 columns"
-},
-- {
-input: true,
-tableView: true,
-inputType: "email",
-label: "Email",
-key: "email",
-placeholder: "",
-prefix: "",
-suffix: "",
-defaultValue: "",
-protected: false,
-unique: false,
-persistent: true,
-type: "email",
-$$hashKey: "object:2701",
--conditional: {
-show: false,
-when: null,
-eq: ""
+"""
+
+CharField = {
+	"input":True,
+	"hidden":False,	
+	"inputType":"text",
+	"inputMask":"",
+	"label":"",
+	"helpText":"",
+	"key":"",
+	"placeholder":"",
+	"suffix":"",
+	"multiple":"",
+	"defaultValue":"",
+	"unique":"",
+	"validation": {
+		"required":"",
+		"minLength":"",
+		"maxLength":"",
+		"pattern":"",
+		"custom":"",
+		"customPrivate":"",
+	},
+	"classes": [],
+	"id":"",		
 }
-},
-- {
-input: true,
-tableView: true,
-inputMask: "(999) 999-9999",
-label: "Phone",
-key: "phone",
-placeholder: "",
-prefix: "",
-suffix: "",
-multiple: false,
-protected: false,
-unique: false,
-persistent: true,
-defaultValue: "",
--validate: {
-required: false
-},
-type: "phoneNumber",
-$$hashKey: "object:2836",
--conditional: {
-show: false,
-when: null,
-eq: ""
+
+EmailField = {
+	"input":True,
+	"hidden":False,
+	"inputType":"email",
+	"inputMask":"",
+	"label":"",
+	"helpText":"",
+	"key":"",
+	"placeholder":"",
+	"suffix":"",
+	"multiple":"",
+	"defaultValue":"",
+	"unique":"",
+	"validation": {
+		"required":"",
+		"minLength":"",
+		"maxLength":"",
+		"pattern":"",
+		"custom":"",
+		"customPrivate":"",
+	},
+	"classes": [],
+	"id":"",	
 }
-},
-- {
-input: true,
-tableView: true,
-label: "",
-key: "addressField",
-placeholder: "",
-multiple: false,
-protected: false,
-unique: false,
-persistent: true,
--validate: {
-required: false
-},
-type: "address",
-$$hashKey: "object:2972",
--conditional: {
-show: false,
-when: null,
-eq: ""
+
+DateTimeField = {
+	"input":True,
+	"hidden":False,
+	"inputType":"text",
+	"inputMask":"",
+	"enableDate":True,
+	"enableTime":True,
+	"format":"yyyy-MM-dd HH:mm",
+	"label":"",
+	"helpText":"",
+	"key":"",
+	"placeholder":"",
+	"suffix":"",
+	"multiple":"",
+	"defaultValue":"",
+	"unique":"",
+	"validation": {
+		"required":"",
+		"minLength":"",
+		"maxLength":"",
+		"pattern":"",
+		"custom":"",
+		"customPrivate":"",
+	},
+	"classes": [],
+	"id":"",
+
+	'''
+
+	NEED TO USE THE DATETIMEPICKER SETTINGS
+
+	datepickerMode: "day",
+	-datePicker: {
+	showWeeks: true,
+	startingDay: 0,
+	initDate: "",
+	minMode: "day",
+	maxMode: "year",
+	yearRange: "20",
+	datepickerMode: "day"
+	},
+	-timePicker: {
+	hourStep: 1,
+	minuteStep: 1,
+	showMeridian: true,
+	readonlyInput: false,
+	mousewheel: true,
+	arrowkeys: true
+	},
+	'''	
+		
 }
-},
-- {
-input: true,
-tableView: true,
-label: "",
-key: "datetimeField",
-placeholder: "",
-format: "yyyy-MM-dd HH:mm",
-enableDate: true,
-enableTime: true,
-datepickerMode: "day",
--datePicker: {
-showWeeks: true,
-startingDay: 0,
-initDate: "",
-minMode: "day",
-maxMode: "year",
-yearRange: "20",
-datepickerMode: "day"
-},
--timePicker: {
-hourStep: 1,
-minuteStep: 1,
-showMeridian: true,
-readonlyInput: false,
-mousewheel: true,
-arrowkeys: true
-},
-protected: false,
-persistent: true,
--validate: {
-required: false,
-custom: ""
-},
-type: "datetime",
-$$hashKey: "object:3105",
--conditional: {
-show: false,
-when: null,
-eq: ""
-}
-},
+
+
+"""
+
 - {
 input: true,
 inputType: "checkbox",
@@ -371,9 +323,7 @@ page: 0
 }
 """
 
-CharField = {
 
-}
 
 
 TextField = ''
