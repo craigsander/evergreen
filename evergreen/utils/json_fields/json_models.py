@@ -111,7 +111,7 @@ DateTimeField = {
 	},
 	"classes": [],
 	"id":"",
-
+}
 	'''
 
 	NEED TO USE THE DATETIMEPICKER SETTINGS
@@ -134,9 +134,8 @@ DateTimeField = {
 	mousewheel: true,
 	arrowkeys: true
 	},
-	'''	
-		
-}
+	'''			
+
 
 
 """
