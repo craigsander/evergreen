@@ -110,8 +110,7 @@ class JSONEmailField():
 		return None
 		
 	def compiled(self):
-		return merge_two_dicts(self.base, self.custom_fields()
-
+		return merge_two_dicts(self.base, self.custom_fields)
 
 class JSONBooleanField():
 	name = 'Boolean Field'
@@ -122,7 +121,7 @@ class JSONBooleanField():
 		return None
 		
 	def compiled(self):
-		return merge_two_dicts(self.base, self.custom_fields()
+		return merge_two_dicts(self.base, self.custom_fields)
 
 
 class JSONDateField():
@@ -134,7 +133,7 @@ class JSONDateField():
 		return None
 		
 	def compiled(self):
-		return merge_two_dicts(self.base, self.custom_fields()
+		return merge_two_dicts(self.base, self.custom_fields)
 
 class JSONDateTimeField():
 	name = 'Datetime Field'	
@@ -145,7 +144,7 @@ class JSONDateTimeField():
 		return None
 		
 	def compiled(self):
-		return merge_two_dicts(self.base, self.custom_fields()
+		return merge_two_dicts(self.base, self.custom_fields)
 
 
 class JSONFilePathField():
@@ -157,7 +156,7 @@ class JSONFilePathField():
 		return None
 		
 	def compiled(self):
-		return merge_two_dicts(self.base, self.custom_fields()
+		return merge_two_dicts(self.base, self.custom_fields)
 
 
 class JSONIntegerField():
@@ -169,7 +168,7 @@ class JSONIntegerField():
 		return None
 		
 	def compiled(self):
-		return merge_two_dicts(self.base, self.custom_fields()
+		return merge_two_dicts(self.base, self.custom_fields)
 
 
 class JSONDecimalField():
@@ -181,7 +180,7 @@ class JSONDecimalField():
 		return None
 		
 	def compiled(self):
-		return merge_two_dicts(self.base, self.custom_fields()
+		return merge_two_dicts(self.base, self.custom_fields)
 
 class JSONImageField():
 	name = 'Image Field'	
@@ -192,7 +191,7 @@ class JSONImageField():
 		return None
 		
 	def compiled(self):
-		return merge_two_dicts(self.base, self.custom_fields()
+		return merge_two_dicts(self.base, self.custom_fields)
 		
 			
 EmailField = {
