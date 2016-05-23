@@ -35,6 +35,9 @@ Things I really like:
 
 """
 
+def render_json_charfield(options):
+	# needs to render
+
 CharField = {
 	"input":True,
 	"hidden":False,	
@@ -57,7 +60,8 @@ CharField = {
 		"customPrivate":"",
 	},
 	"classes": [],
-	"id":"",		
+	"id":"",
+	"customTemplate":""	
 }
 
 EmailField = {
@@ -82,7 +86,8 @@ EmailField = {
 		"customPrivate":"",
 	},
 	"classes": [],
-	"id":"",	
+	"id":"",
+	"customTemplate":""	
 }
 
 DateTimeField = {
@@ -111,6 +116,7 @@ DateTimeField = {
 	},
 	"classes": [],
 	"id":"",
+	"customTemplate":""	
 }
 
 """
