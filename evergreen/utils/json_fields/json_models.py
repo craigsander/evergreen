@@ -1,3 +1,5 @@
+import json
+
 
 """ 
 
@@ -35,35 +37,164 @@ Things I really like:
 
 """
 
-def render_json_charfield(options):
-	# needs to render
 
-CharField = {
-	"input":True,
-	"hidden":False,	
-	"inputType":"text",
-	"inputMask":"",
-	"label":"",
-	"helpText":"",
-	"key":"",
-	"placeholder":"",
-	"suffix":"",
-	"multiple":"",
-	"defaultValue":"",
-	"unique":"",
-	"validation": {
-		"required":"",
-		"minLength":"",
-		"maxLength":"",
-		"pattern":"",
-		"custom":"",
-		"customPrivate":"",
-	},
-	"classes": [],
-	"id":"",
-	"customTemplate":""	
+#
+# There is a tremendous amount of stuff in django.db.models.fields which could/should be applied to validating and creating these JSON models, however,
+# for the sake of getting a working system in place as quickly as possible, that will have to wait. 
+#
+# For now, the minimum viable product must suffice.
+#
+
+
+def merge_two_dicts(x, y):
+    '''Given two dicts, merge them into a new dict as a shallow copy.'''
+    z = x.copy()
+    z.update(y)
+    return z
+
+
+
+__all__ = [str(x) for x in (
+    'BooleanField', 'CharField','DateField', 'DateTimeField', 'DecimalField',
+    'EmailField', 'FilePathField', 'PositiveIntegerField','PositiveSmallIntegerField', 'SlugField', 'SmallIntegerField', 'TextField',
+    'TimeField', 'URLField', 'UUIDField', 'ImagePathField',
+)]
+
+
+__base_field_data__ = {
+	'label':'',
+	'inputMask':'',
+	'placeholder':'',
+	'value':'',
+	'displayValue':'',
+	'multiple':'',
+	'helpText':'',
+	'prefix':'',
+	'suffix':'',
+	'id':'',
+	'classes':[],
+	'customTemplate':'',
 }
 
+class JSONCharField():
+	name = 'String Field'
+	base = __base_field_data__
+	custom_fields = {
+		'inputType':'text',
+		'hidden':'',
+		'multiple':'',
+		'unique':'',
+		'validation': {
+			"required":"",
+			"minLength":"",
+			"maxLength":"",
+			"pattern":"",
+			"custom":"",
+			"customPrivate":"",			
+		},
+	}
+	
+	def validate(self):
+		return None
+		
+	def compiled(self):
+		return merge_two_dicts(self.base, self.custom_fields)
+
+
+class JSONEmailField():
+	name = 'Email Field'
+	base = __base_field_data__
+	custom_fields = {}
+	
+	def validate(self):
+		return None
+		
+	def compiled(self):
+		return merge_two_dicts(self.base, self.custom_fields()
+
+
+class JSONBooleanField():
+	name = 'Boolean Field'
+	base = __base_field_data__
+	custom_fields = {}
+	
+	def validate(self):
+		return None
+		
+	def compiled(self):
+		return merge_two_dicts(self.base, self.custom_fields()
+
+
+class JSONDateField():
+	name = 'Date Field'	
+	base = __base_field_data__
+	custom_fields = {}
+	
+	def validate(self):
+		return None
+		
+	def compiled(self):
+		return merge_two_dicts(self.base, self.custom_fields()
+
+class JSONDateTimeField():
+	name = 'Datetime Field'	
+	base = __base_field_data__
+	custom_fields = {}
+	
+	def validate(self):
+		return None
+		
+	def compiled(self):
+		return merge_two_dicts(self.base, self.custom_fields()
+
+
+class JSONFilePathField():
+	name = 'File Field'	
+	base = __base_field_data__
+	custom_fields = {}
+	
+	def validate(self):
+		return None
+		
+	def compiled(self):
+		return merge_two_dicts(self.base, self.custom_fields()
+
+
+class JSONIntegerField():
+	name = 'Integer Field'	
+	base = __base_field_data__
+	custom_fields = {}
+	
+	def validate(self):
+		return None
+		
+	def compiled(self):
+		return merge_two_dicts(self.base, self.custom_fields()
+
+
+class JSONDecimalField():
+	name = 'Decimal Field'	
+	base = __base_field_data__
+	custom_fields = {}
+	
+	def validate(self):
+		return None
+		
+	def compiled(self):
+		return merge_two_dicts(self.base, self.custom_fields()
+
+class JSONImageField():
+	name = 'Image Field'	
+	base = __base_field_data__
+	custom_fields = {}
+	
+	def validate(self):
+		return None
+		
+	def compiled(self):
+		return merge_two_dicts(self.base, self.custom_fields()
+		
+			
 EmailField = {
 	"input":True,
 	"hidden":False,
