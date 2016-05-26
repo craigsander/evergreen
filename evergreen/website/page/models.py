@@ -71,6 +71,7 @@ class Page(models.Model):
 	published = models.BooleanField(default=False)
 	publishOn = models.DateField(null=True, blank=True, help_text='Set a date here to delay publishing of this page until a certain date. Publishing/Unpublishing takes effect around midnight of the date set.')
 	expiresOn = models.DateField(null=True, blank=True, help_text='Set a date here to unpublish this page on a certain date. Publishing/Unpublishing takes effect around midnight of the date set.')
+	categories = models.ManyToManyField('website.Category', blank=True, null=True)
 
 	fields = JSONField(blank=True, null=True)
 
