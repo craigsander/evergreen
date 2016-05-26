@@ -46,6 +46,17 @@ Things I really like:
 #
 
 
+
+# There's the json-field models. They define what each field type should have
+
+# there's the parent-settings object, which outlines the fields. there, the admin/developer will change the add json variables to the dict. The developer will then write the values to the necessary fields (hidden, required, multiple, etc).
+
+# On the creation of each child object, the schema will display the forms accordingly. 
+
+# on save, the schema, with the submitted form values, will be saved to the JSON data field. 
+
+# How does the system know what input type to create? What does django forms do? 
+
 def merge_two_dicts(x, y):
     '''Given two dicts, merge them into a new dict as a shallow copy.'''
     z = x.copy()
@@ -76,7 +87,7 @@ __base_field_data__ = {
 	'customTemplate':'',
 }
 
-class JSONCharField():
+class JSONCharField(args=None):
 	name = 'String Field'
 	base = __base_field_data__
 	custom_fields = {
@@ -91,10 +102,13 @@ class JSONCharField():
 			"pattern":"",
 			"custom":"",
 			"customPrivate":"",			
-		},
+		},	
 	}
 	
 	def validate(self):
+		# check max/min length
+		# check pattern? 
+		# check required
 		return None
 		
 	def compiled(self):
