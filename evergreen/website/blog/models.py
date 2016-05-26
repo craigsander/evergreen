@@ -33,7 +33,7 @@ class Article(models.Model):
 	"""
 	
 	# universal fields
-	articleType = models.ForeignKey('PageType')
+	articleType = models.ForeignKey('ArticleType')
 	author = models.ForeignKey('account.UserProfile')
 	authorDisplayValue = models.CharField(max_length=200, blank=True, null=True, help_text='If you want to display a name other than the person listed in the author field, enter the text here.')
 	title = models.CharField(max_length=200)
