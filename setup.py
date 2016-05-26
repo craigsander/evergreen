@@ -10,4 +10,5 @@ setup(name='Evergreen',
       author_email='csander@centriole-solutions.com',
       url='',
       packages=find_packages(),
+      data_files=['',['evergreen/manage/templates/*.html']],
      )
