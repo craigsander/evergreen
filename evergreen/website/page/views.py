@@ -14,6 +14,6 @@ from . import models
 
 def page(request, slug, template_name='page.html'):
 
-    page = get_object_or_404(models.Page, slug=slug)
+    page = get_object_or_404(models.Page, slug=slug, published=True)
 
     return render_to_response(template_name, locals(), context_instance=RequestContext(request))
