@@ -5,10 +5,10 @@
 {% block main_content %}
 	
 	{% with template_name=article.template.templateName %}
-		{% if article.template %}
-			{% include 'blog/{{ template_name }}' %}
+		{% if article.articleType.template %}
+			{% include ''|add:template_name %}
 		{% else %}
-			{% include 'blog/default.html' %}
+			{% include 'default.html' %}
 		{% endif %}
 	{% endwith %}
 		
