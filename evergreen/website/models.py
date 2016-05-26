@@ -6,3 +6,10 @@ class Category(models.Model):
 
 	def __unicode__(self):
 		return self.name
+
+class Keyword(models.Model):
+	name = models.CharField(max_length=200)
+	active = models.BooleanField(default=True)
+	
+	def __unicode__(self):
+		return self.name

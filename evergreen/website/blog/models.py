@@ -43,7 +43,8 @@ class Article(models.Model):
 	publishOn = models.DateField(null=True, blank=True, help_text='Set a date here to delay publishing of this page until a certain date. Publishing/Unpublishing takes effect around midnight of the date set.')
 	expiresOn = models.DateField(null=True, blank=True, help_text='Set a date here to unpublish this page on a certain date. Publishing/Unpublishing takes effect around midnight of the date set.')
 	fields = JSONField(blank=True, null=True)
-	categories = models.ManyToManyField('website.Category', blank=True, null=True)
+	category = models.ForeignKey('website.Category', blank=True, null=True)
+	keywords = models.ManyToManyField('website.Keyword', blank=True, null=True)
 	
 	# seo
 	description = models.CharField(max_length=250)

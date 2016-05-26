@@ -10,3 +10,7 @@ from django.contrib.auth.decorators import login_required
 def index(request, template_name='index.html'):
 	
 	return render_to_response(template_name, locals(), context_instance=RequestContext(request))
+
+
+## To Do: Create endpoint to CRUD Category
+## TO DO: Create endpoint to CRUD Keyword
