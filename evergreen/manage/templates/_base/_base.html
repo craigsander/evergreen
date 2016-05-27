@@ -8,11 +8,11 @@
 	</head>
 	<body>
 		
-		{% include '_topbar.html' %}
+		{% include '_base/_topbar.html' %}
 		
 		<div class="row">
 			<div class="large-3 columns">
-				{% include '_sidebar.html'%}
+				{% include '_base/_sidebar.html'%}
 			</div>
 			<div class="large-9 columns">
 				{% block main_content %}{% endblock %}
