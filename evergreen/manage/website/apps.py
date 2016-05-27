@@ -4,4 +4,4 @@ from django.apps import AppConfig
 
 
 class AppConfig(AppConfig):
-    name = 'blog-admin'
+    name = 'website-admin'
